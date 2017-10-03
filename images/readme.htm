@@ -13,7 +13,7 @@
 本系统使用AMP搭建web服务器，AMP系指apache,mysql,php三套开源软件构建web应用平台的黄金组合，目前网络上有超过70%的web应用是由amp（lamp）所提供。<br>
 一、软件的下载，上述三款软件都是开源的，因此建议直接去各自的主站去下载，并对下载的压缩包进行MD5验证。
     下面是我搭建开发平台时使用的压缩包：<br>
-    <a href="./package/php-5.5.35-Win32-VC11-x86.zip">php压缩包</a>&nbsp;&nbsp;<a href="./package/httpd-2.4.20-win32.zip">apache压缩包</a>&nbsp;&nbsp;<a href="./package/mysql-5.6.24-win32.1432006610.zip">mysql压缩包</a>
+    <a href="https://pan.baidu.com/s/1jI03jka">php压缩包</a>&nbsp;&nbsp;<a href="https://pan.baidu.com/s/1qYcArMW">apache压缩包</a>&nbsp;&nbsp;<a href="https://pan.baidu.com/s/1qXD7SnE">mysql压缩包</a>
     <br>如果需自行下载，为满足本系统各种功能所需，建议版本不要太低：php&gt;5.5，apache&gt;2.4，mysql&gt;5.5 
 二、系统搭建，下载的amp包都是压缩包格式，解压至指定目录即可，我是将三个包都解压至D:/app/目录下，三个目录分别为：apache24，php55，mysql56。同时建立www目录
     解压完成再进行简单的配置即可完成系统的搭建。
@@ -26,7 +26,7 @@
     DirectoryIndex index.php index.html
 
 配置修改完成后，运行下列命令，将apache服务添加至windows启动服务中：
-httpd -k install -n"apache" ，如果该命令不能执行，一般是缺少必要的VC运行库文件，<a href='./package/msvcr100.dll' target=_blank>下载</a>后（这是32位版本的）
+httpd -k install -n"apache" ，如果该命令不能执行，一般是缺少必要的VC运行库文件，<a href='https://pan.baidu.com/s/1nv62BaD' target=_blank>下载</a>后（这是32位版本的）
 拷贝至：system32或者SysWOW64（64位版本）目录下即可.
 运行下列命令启动服务 
 net start apache 
@@ -44,7 +44,7 @@ LoadModule php5_module "D:/app/php55/php5apache2_4.dll"
 PHPIniDir "D:/app/php55"
 AddType application/x-httpd-php .php
 此时，重启apache服务，查看phpinfo是否正常运行，如果此时出现服务启动错误，错误提示是无法加载php5apache2_4.dll时
-这应该是缺少了VC运行库文件：<a href='./package/vcredist_x86.exe' target=_blank>vcredist_x86.exe</a>安装后问题即可解决。
+这应该是缺少了VC运行库文件：<a href='https://pan.baidu.com/s/1bo5kTFx' target=_blank>vcredist_x86.exe</a>安装后问题即可解决。
 <font color=blue>3、mysql的配置：</font>进入D:/app/mysql56目录，打开配置文件my.ini，添加如下配置：
 添加：
 [client]
@@ -195,7 +195,7 @@ CREATE TABLE `trail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4552 DEFAULT CHARSET=utf8mb4 
 
 ------------------------------------------------------------------------------------------------------
-</font>一个完整库结构并包含行政区划和监测项目信息数据的导出表<a href="./package/gis_hb_empty.sql">下载</a>
+</font>一个完整库结构并包含行政区划和监测项目信息数据的导出表<a href="./gis_hb_empty.sql">下载</a>
 下载完成后，使用如下命令将数据库导入：
 mysql&gt;use gis_hb;
 mysql&gt;source d:/gis_hb_empty.sql;
@@ -219,7 +219,7 @@ update area_info set bused = 1 where aid &gt;=370900 and aid &lt;370999 (本系�
 
 <a href="#header">返回</a>
 <a name="web_data"><center><font size=5 color=red>土壤环境信息系统的安装</font></center>
-下载并解压<a href="./package/php_hl.rar">平台安装包</a>，将解压目录及文件拷贝至D:/app/www/目录下.
+下载并解压<a href="https://github.com/bitsfox/gis_hb.git">平台安装包</a>，将解压目录及文件拷贝至D:/app/www/目录下.
 打开浏览器测试：http://localhost/gis_hb/login.php。 能正常打开及表示成功安装。
 由于本系统所用的数据库是按年度强制划分的（每年的数据库可以布置在不同的数据库服务器上）
 所以，在这个系统平台目录下有需要由维护人员定期修改（维护）的数据库配置文件：
